@@ -50,10 +50,10 @@ function inject() {
   }
 
   function all() {
-    let allTableRow = Array.from(document.querySelectorAll("tr"));
+    let allTableRow = Array.from(document.querySelectorAll(".MuiGrid2-container .MuiGrid2-wrap-xs-nowrap"));
     for (let i = 0; i < allTableRow.length; i++) {
-      let branchName = allTableRow[i].innerText;
-      allTableRow[i].style.display = "";
+      let branchName = allTableRow[i].parentNode.parentNode.innerText;
+      allTableRow[i].parentNode.parentNode.style.display = "";
     }
     let div = document.createElement("div");
     div.setAttribute("id", "divAll");
@@ -62,12 +62,12 @@ function inject() {
   }
 
   function onlyPR() {
-    let allTableRow = Array.from(document.querySelectorAll("tr"));
+    let allTableRow = Array.from(document.querySelectorAll(".MuiGrid2-container .MuiGrid2-wrap-xs-nowrap"));
     for (let i = 0; i < allTableRow.length; i++) {
-      let branchName = allTableRow[i].innerText;
-      allTableRow[i].style.display = "";
+      let branchName = allTableRow[i].parentNode.parentNode.innerText;
+      allTableRow[i].parentNode.parentNode.style.display = "";
       if (!branchName.includes("pull/")) {
-        allTableRow[i].style.display = "none";
+        allTableRow[i].parentNode.parentNode.style.display = "none";
       }
     }
     let n = count();
@@ -78,12 +78,12 @@ function inject() {
   }
 
   function onlyBranch() {
-    let allTableRow = Array.from(document.querySelectorAll("tr"));
+    let allTableRow = Array.from(document.querySelectorAll(".MuiGrid2-container .MuiGrid2-wrap-xs-nowrap"));
     for (let i = 0; i < allTableRow.length; i++) {
-      let branchName = allTableRow[i].innerText;
-      allTableRow[i].style.display = "";
+      let branchName = allTableRow[i].parentNode.parentNode.innerText;
+      allTableRow[i].parentNode.parentNode.style.display = "";
       if (branchName.includes("pull/")) {
-        allTableRow[i].style.display = "none";
+        allTableRow[i].parentNode.parentNode.style.display = "none";
       }
     }
     let n = count();
@@ -94,12 +94,12 @@ function inject() {
   }
 
   function onlyExecuting() {
-    let allTableRow = Array.from(document.querySelectorAll("tr"));
+    let allTableRow = Array.from(document.querySelectorAll(".MuiGrid2-container .MuiGrid2-wrap-xs-nowrap"));
     for (let i = 0; i < allTableRow.length; i++) {
-      let branchName = allTableRow[i].innerText;
-      allTableRow[i].style.display = "";
+      let branchName = allTableRow[i].parentNode.parentNode.innerText;
+      allTableRow[i].parentNode.parentNode.style.display = "";
       if (!branchName.includes("play_circle\nexecuting")) {
-        allTableRow[i].style.display = "none";
+        allTableRow[i].parentNode.parentNode.style.display = "none";
       }
     }
     let n = count();
@@ -110,12 +110,12 @@ function inject() {
   }
 
   function onlyAborted() {
-    let allTableRow = Array.from(document.querySelectorAll("tr"));
+    let allTableRow = Array.from(document.querySelectorAll(".MuiGrid2-container .MuiGrid2-wrap-xs-nowrap"));
     for (let i = 0; i < allTableRow.length; i++) {
-      let branchName = allTableRow[i].innerText;
-      allTableRow[i].style.display = "";
+      let branchName = allTableRow[i].parentNode.parentNode.innerText;
+      allTableRow[i].parentNode.parentNode.style.display = "";
       if (!branchName.includes("stop_circle\naborted")) {
-        allTableRow[i].style.display = "none";
+        allTableRow[i].parentNode.parentNode.style.display = "none";
       }
     }
     let n = count();
@@ -126,12 +126,12 @@ function inject() {
   }
 
   function onlyCompleted() {
-    let allTableRow = Array.from(document.querySelectorAll("tr"));
+    let allTableRow = Array.from(document.querySelectorAll(".MuiGrid2-container .MuiGrid2-wrap-xs-nowrap"));
     for (let i = 0; i < allTableRow.length; i++) {
-      let branchName = allTableRow[i].innerText;
-      allTableRow[i].style.display = "";
+      let branchName = allTableRow[i].parentNode.parentNode.innerText;
+      allTableRow[i].parentNode.parentNode.style.display = "";
       if (!branchName.includes("check_circle\ncompleted")) {
-        allTableRow[i].style.display = "none";
+        allTableRow[i].parentNode.parentNode.style.display = "none";
       }
     }
     let n = count();
@@ -142,12 +142,12 @@ function inject() {
   }
 
   function onlyFailed() {
-    let allTableRow = Array.from(document.querySelectorAll("tr"));
+    let allTableRow = Array.from(document.querySelectorAll(".MuiGrid2-container .MuiGrid2-wrap-xs-nowrap"));
     for (let i = 0; i < allTableRow.length; i++) {
-      let branchName = allTableRow[i].innerText;
-      allTableRow[i].style.display = "";
+      let branchName = allTableRow[i].parentNode.parentNode.innerText;
+      allTableRow[i].parentNode.parentNode.style.display = "";
       if (!branchName.includes("error_circle\nfailed")) {
-        allTableRow[i].style.display = "none";
+        allTableRow[i].parentNode.parentNode.style.display = "none";
       }
     }
     let n = count();
@@ -158,10 +158,10 @@ function inject() {
   }
 
   function count(id) {
-    let allTableRow = Array.from(document.querySelectorAll("tr"));
+    let allTableRow = Array.from(document.querySelectorAll(".MuiGrid2-container .MuiGrid2-wrap-xs-nowrap"));
     let sDisplayBlank = 0;
     for (let i = 0; i < allTableRow.length; i++) {
-      if (allTableRow[i].style.display == "") {
+      if (allTableRow[i].parentNode.parentNode.style.display == "") {
         sDisplayBlank += 1;
       }
     }
