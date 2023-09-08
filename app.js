@@ -1,5 +1,5 @@
 if (window.location.hostname.includes("cirrus-ci.com")) {
-  setTimeout(inject, 1000);
+  setTimeout(inject, 2500);
 }
 
 function inject() {
